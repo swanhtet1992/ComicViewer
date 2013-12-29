@@ -3,6 +3,6 @@
       package="net.bytten.comicviewer"
       android:versionCode="1"
       android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="11" />
+    <uses-sdk android:minSdkVersion="5" android:targetSdkVersion="11" />
 
 </manifest>

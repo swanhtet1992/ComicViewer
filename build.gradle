@@ -1,0 +1,31 @@
+apply plugin: 'android-library'
+
+def setVersionCode = { ->
+
+    def code = project.hasProperty('versionCode') ? versionCode.toInteger() : -1
+    println "VersionCode is set to $code"
+    return code
+}
+
+def setVersionName = { ->
+
+    def code = project.hasProperty('versionName') ? versionName : "0.0.0"
+    println "VersionName is set to $code"
+    return code
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.0"
+    defaultConfig {
+        minSdkVersion 5
+        targetSdkVersion 19
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+    }
+}

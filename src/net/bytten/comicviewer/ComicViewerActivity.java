@@ -89,7 +89,7 @@ public abstract class ComicViewerActivity extends Activity {
     protected IComicProvider provider;
     private EditText comicIdSel;
 
-    private View zoom = null;
+    //private View zoom = null;
 
     private ImageView bookmarkBtn = null;
 
@@ -126,7 +126,7 @@ public abstract class ComicViewerActivity extends Activity {
         comicIdSel = (EditText)findViewById(R.id.comicIdSel);
 
         webview.requestFocus();
-        zoom = webview.getZoomControls();
+        //zoom = webview.getAllowZoomButtons();
 
         webview.setClickable(true);
         webview.setOnClickListener(new OnClickListener() {
@@ -255,7 +255,7 @@ public abstract class ComicViewerActivity extends Activity {
 
     public void setZoomControlEnable(boolean allowPinchZoom, boolean showZoomButtons) {
         final ViewGroup zoomParent = (ViewGroup)webview.getParent().getParent();
-        if (zoom.getParent() == zoomParent) zoomParent.removeView(zoom);
+        //if (zoom.getParent() == zoomParent) zoomParent.removeView(zoom);
         webview.getSettings().setBuiltInZoomControls(allowPinchZoom);
         webview.setAllowZoomButtons(false);
         webview.setAllowPinchZoom(allowPinchZoom);
@@ -263,8 +263,8 @@ public abstract class ComicViewerActivity extends Activity {
             if (allowPinchZoom) {
                 webview.setAllowZoomButtons(true);
             } else {
-                zoomParent.addView(zoom, ZOOM_PARAMS);
-                zoom.setVisibility(View.GONE);
+                //zoomParent.addView(zoom, ZOOM_PARAMS);
+                //zoom.setVisibility(View.GONE);
             }
         }
     }
